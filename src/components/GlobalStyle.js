@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle, styled } from 'styled-components';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
@@ -20,10 +20,62 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     list-style: none;
   }
-
+a{
+  text-decoration: none;
+}
   img {
     display: block;
     max-width: 100%;
     object-fit: cover;
   }
+`;
+export const Section = styled.div`
+  display: flex;
+`;
+export const ListBlok = styled.ul`
+  display: flex;
+`;
+export const ListHad = styled.li`
+  font-size: 20px;
+  margin-left: 10px;
+  display: flex;
+  gap: 10px;
+`;
+export const ListInfo = styled.li`
+  text-decoration: underline;
+  font-size: 15px;
+  margin-left: 10px;
+`;
+export const Wrapper = styled.div`
+  display: flex;
+  margin-left: 30px;
+  margin-right: 10px;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
+`;
+
+export const Button = styled.div`
+  width: 100px;
+  border: 1px solid #5d9969;
+  height: 27px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+`;
+export const Topic = styled.h2`
+  margin-bottom: 8px;
+`;
+export const TopicSmall = styled.h3`
+  margin-bottom: 8px;
+`;
+export const Text = styled.p`
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-weight: bold;
 `;

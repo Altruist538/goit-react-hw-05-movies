@@ -16,11 +16,15 @@ export const fetchDetails = async id => {
   return response.data;
 };
 // fetchDetails();
-// export const fetchQuizById = async quizId => {
-//   const response = await axios.get(`/quizzes/${quizId}`);
-//   return response.data;
-// };
-
+export const fetchSearch = async search => {
+  console.log(search);
+  const response = await axios.get(
+    `/search/movie?query=${search}&include_adult=false&language=en-US&page=1&api_key=${MY_KEY}`
+  );
+  console.log(response.data);
+  return response.data;
+};
+// fetchSearch();
 // export const deleteQuizById = async quizId => {
 //   const response = await axios.delete(`/quizzes/${quizId}`);
 //   return response.data;

@@ -5,19 +5,20 @@ import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
 import { Home } from '../pages/Home';
 import { NotFound } from 'pages/NotFound ';
+import { GlobalStyle, ListHad, ListBlok } from './GlobalStyle';
 
 export const App = () => {
   return (
     <>
       <nav>
-        <ul>
-          <li>
+        <ListBlok>
+          <ListHad>
             <Link to="/">Home</Link>
-          </li>
-          <li>
+          </ListHad>
+          <ListHad>
             <Link to="/movies">Movies</Link>
-          </li>
-        </ul>
+          </ListHad>
+        </ListBlok>
       </nav>
       {/* <Link to="/movies/:movieId">
         страница с детальной информацией о кинофильме
@@ -31,9 +32,9 @@ export const App = () => {
         <Route path="/movies/:id" element={<MovieDetails />} />
         <Route path="/movies/:movieId/cast" element={<Cast />} />
         <Route path="/movies/:movieId/reviews" element={<Reviews />} />
-
         <Route path="*" element={<NotFound />} />
       </Routes>
+      <GlobalStyle />
     </>
   );
 };

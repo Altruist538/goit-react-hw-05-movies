@@ -1,6 +1,6 @@
 import { Formik } from 'formik';
 // import * as Yup from 'yup';
-import { nanoid } from 'nanoid';
+// import { nanoid } from 'nanoid';
 import {
   StyledForm,
   StyledField,
@@ -19,7 +19,7 @@ export const SearchForm = ({ onAdd }) => {
         }}
         // validationSchema={validationSchema}
         onSubmit={(values, actions) => {
-          onAdd({ ...values, id: nanoid() });
+          onAdd(values);
           actions.resetForm();
         }}
       >
