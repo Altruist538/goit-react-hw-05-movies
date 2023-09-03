@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { fetchTrending } from 'components/api';
 
-export const Home = () => {
+const Home = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ export const Home = () => {
 
   return (
     <>
-      <div>Home</div>
+      <h2>Trending today</h2>
       <ul>
         {data.map(dat => (
           <li key={dat.id}>
@@ -32,3 +32,4 @@ export const Home = () => {
     </>
   );
 };
+export default Home;

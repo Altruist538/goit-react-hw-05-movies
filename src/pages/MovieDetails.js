@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchDetails } from 'components/api';
-import { useParams, Link, Outlet } from 'react-router-dom';
+import { useParams, Link, Outlet, useLocation } from 'react-router-dom';
 
 import {
   GlobalStyle,
@@ -11,11 +11,13 @@ import {
 } from 'components/GlobalStyle';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
-export const MovieDetails = () => {
+const MovieDetails = () => {
   const { id } = useParams();
   const [data, setData] = useState({});
   const [loading, setLoading] = useState(true);
 
+  const location = useLocation();
+  console.log(location);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -31,13 +33,14 @@ export const MovieDetails = () => {
     fetchData();
   }, [id]);
 
+  const backLink = location?.state?.from ?? '/';
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <>
-      <Link to="/">
+      <Link to={backLink}>
         <Button>
           <AiOutlineArrowLeft />
           Go back
@@ -62,10 +65,10 @@ export const MovieDetails = () => {
       <ul>
         <p>Additional information</p>
         <ListInfo>
-          <Link to="/movies/:movieId/cast">Cast</Link>
+          <Link to={`/movies/${id}/cast`}>Cast</Link>
         </ListInfo>
         <ListInfo>
-          <Link to="/movies/:movieId/reviews">Reviews</Link>
+          <Link to={`/movies/${id}/reviews`}>Reviews</Link>
         </ListInfo>
       </ul>
       <hr />
@@ -74,3 +77,4 @@ export const MovieDetails = () => {
     </>
   );
 };
+export default MovieDetails;

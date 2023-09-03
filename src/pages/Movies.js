@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { SearchForm } from 'components/SearchForm/SearchForm';
 import { fetchSearch } from 'components/api';
 import toast from 'react-hot-toast';
-export const Movies = () => {
+const Movies = () => {
   const [data, setData] = useState([]);
-
+  const location = useLocation();
   const addQuiz = async search => {
     try {
       const response = await fetchSearch(search.movies);
@@ -26,7 +26,9 @@ export const Movies = () => {
         <ul>
           {data.map(dat => (
             <li key={dat.id}>
-              <Link to={`/movies/${dat.id}`}>{dat.title}</Link>
+              <Link to={`/movies/${dat.id}`} state={{ from: location }}>
+                {dat.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -35,3 +37,4 @@ export const Movies = () => {
     </>
   );
 };
+export default Movies;
