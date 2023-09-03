@@ -20,11 +20,6 @@ export const App = () => {
           </ListHad>
         </ListBlok>
       </nav>
-      {/* <Link to="/movies/:movieId">
-        страница с детальной информацией о кинофильме
-      </Link>
-      <Link to="/movies/:movieId/cast">информация о актерском составе</Link>
-      <Link to="/movies/:movieId/reviews">информация о актерском составе</Link> */}
       <hr />
 
       <Routes>
