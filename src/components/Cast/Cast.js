@@ -31,6 +31,7 @@ export const Cast = () => {
               alt={dat.name}
               width="200px"
               height="300px"
+              style={{ backgroundColor: '#f0f0f0' }}
             />
             <h2>{dat.name}</h2>
           </li>
