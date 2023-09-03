@@ -22,8 +22,14 @@ export const fetchSearch = async search => {
   return response.data;
 };
 export const fetchCredits = async id => {
-  console.log(id);
   const response = await axios.get(`/movie/${id}/credits?api_key=${MY_KEY}`);
+  return response.data;
+};
+export const fetchReviews = async id => {
+  console.log(id);
+  const response = await axios.get(
+    `/movie/${id}/reviews?api_key=${MY_KEY}&include_adult=false&language=en-US&page=1`
+  );
   console.log(response.data);
   return response.data;
 };
