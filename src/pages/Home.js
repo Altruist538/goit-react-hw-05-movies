@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+// import { Link, useLocation } from 'react-router-dom';
 import { fetchTrending } from 'components/api';
+import { MoveList } from 'components/MoveList/MoveList';
+import { Topic } from 'components/GlobalStyle';
 
 const Home = () => {
   const [data, setData] = useState([]);
-  const location = useLocation();
+  // const location = useLocation();
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -20,16 +22,8 @@ const Home = () => {
 
   return (
     <>
-      <h2>Trending today</h2>
-      <ul>
-        {data.map(dat => (
-          <li key={dat.id}>
-            <Link to={`/movies/${dat.id}`} state={{ from: location }}>
-              {dat.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <Topic>Trending today</Topic>
+      {data && <MoveList data={data} />}
       <hr />
     </>
   );

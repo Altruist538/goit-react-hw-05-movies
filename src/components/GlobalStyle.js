@@ -68,7 +68,9 @@ export const Button = styled.div`
   margin-bottom: 5px;
 `;
 export const Topic = styled.h2`
-  margin-bottom: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 export const TopicSmall = styled.h3`
   margin-bottom: 8px;

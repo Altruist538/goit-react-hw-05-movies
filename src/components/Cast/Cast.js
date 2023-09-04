@@ -1,6 +1,7 @@
 import { fetchCredits } from 'components/api';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import imgDat from '../imgDat/actor.jpg';
 export const Cast = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
@@ -26,12 +27,12 @@ export const Cast = () => {
               src={
                 dat.profile_path !== null
                   ? `https://image.tmdb.org/t/p/w500${dat.profile_path}`
-                  : `../imgDat/plugActor.jpg`
+                  : imgDat
               }
               alt={dat.name}
               width="200px"
               height="300px"
-              style={{ backgroundColor: '#f0f0f0' }}
+              style={{ objectFit: 'contain ' }}
             />
             <h2>{dat.name}</h2>
           </li>
