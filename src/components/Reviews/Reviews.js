@@ -1,3 +1,4 @@
+import { Topic, ListText, ListBlok, ListHad } from './Reviews.styled';
 import { fetchReviews } from 'components/api';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
@@ -17,14 +18,19 @@ export const Reviews = () => {
   }, [id]);
   return (
     <>
-      <ul>
-        {data.map(dat => (
-          <li key={dat.id}>
-            <h2>{dat.author}</h2>
-            <p>{dat.content}</p>
-          </li>
-        ))}
-      </ul>
+      <ListBlok>
+        {data.length !== 0 ? (
+          data.map(dat => (
+            <ListHad key={dat.id}>
+              <Topic>{dat.author}</Topic>
+              <ListText>{dat.content}</ListText>
+            </ListHad>
+          ))
+        ) : (
+          <ListText>We don't have any reviews for this move.</ListText>
+        )}
+      </ListBlok>
+
       <hr />
     </>
   );

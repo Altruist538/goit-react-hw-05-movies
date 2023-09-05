@@ -5,33 +5,34 @@ import { Cast } from './Cast/Cast';
 import { Reviews } from './Reviews/Reviews';
 import Home from '../pages/Home';
 import NotFound from 'pages/NotFound ';
-import { GlobalStyle, ListHad, ListBlok } from './GlobalStyle';
+import { GlobalStyle, ListHad, ListBlok, Header, Section } from './GlobalStyle';
 
 export const App = () => {
   return (
     <>
-      <nav>
-        <ListBlok>
-          <ListHad>
-            <Link to="/">Home</Link>
-          </ListHad>
-          <ListHad>
-            <Link to="/movies">Movies</Link>
-          </ListHad>
-        </ListBlok>
-      </nav>
-      <hr />
+      <Section>
+        <Header>
+          <ListBlok>
+            <ListHad>
+              <Link to="/">Home</Link>
+            </ListHad>
+            <ListHad>
+              <Link to="/movies">Movies</Link>
+            </ListHad>
+          </ListBlok>
+          <hr />
+        </Header>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:id" element={<MovieDetails />}>
-          <Route path="cast" element={<Cast />} />
-          <Route path="reviews" element={<Reviews />} />
-        </Route>
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/movies" element={<Movies />} />
+          <Route path="/movies/:id" element={<MovieDetails />}>
+            <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route>
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </Section>
       <GlobalStyle />
     </>
   );

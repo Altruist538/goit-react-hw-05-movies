@@ -24,7 +24,6 @@ const Home = () => {
     <>
       <Topic>Trending today</Topic>
       {data && <MoveList data={data} />}
-      <hr />
     </>
   );
 };

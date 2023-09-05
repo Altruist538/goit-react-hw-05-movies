@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    
   }
 
   code {
@@ -30,10 +31,18 @@ a{
   }
 `;
 export const Section = styled.div`
+  background-color: #ebdfcf52;
+  width: 1200px;
+  margin: auto;
+  // margin-top: 10px;
+`;
+export const Container = styled.div`
+  margin-top: 10px;
   display: flex;
 `;
 export const ListBlok = styled.ul`
   display: flex;
+  padding-top: 10px;
 `;
 export const ListHad = styled.li`
   font-size: 20px;
@@ -79,5 +88,10 @@ export const Text = styled.p`
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 8px;
+`;
+export const Header = styled.nav`
+  width: 1200px;
+
+  margin: auto;
   font-weight: bold;
 `;

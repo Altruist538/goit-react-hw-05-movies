@@ -1,7 +1,8 @@
 import { fetchCredits } from 'components/api';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import imgDat from '../imgDat/actor.jpg';
+import imgDat from '../imgDat/actor.png';
+import { ListBlok, ListHad, ListText } from './Cast.styled';
 export const Cast = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
@@ -20,9 +21,9 @@ export const Cast = () => {
 
   return (
     <>
-      <ul>
+      <ListBlok>
         {data.map(dat => (
-          <li key={dat.id}>
+          <ListHad key={dat.id}>
             <img
               src={
                 dat.profile_path !== null
@@ -34,10 +35,10 @@ export const Cast = () => {
               height="300px"
               style={{ objectFit: 'contain ' }}
             />
-            <h2>{dat.name}</h2>
-          </li>
+            <ListText>{dat.name}</ListText>
+          </ListHad>
         ))}
-      </ul>
+      </ListBlok>
       <hr />
     </>
   );

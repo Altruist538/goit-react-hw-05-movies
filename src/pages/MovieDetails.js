@@ -7,7 +7,10 @@ import {
   Section,
   Wrapper,
   Button,
-  ListInfo,
+  ListHad,
+  Container,
+  ListBlok,
+  Text,
 } from 'components/GlobalStyle';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 
@@ -40,38 +43,40 @@ const MovieDetails = () => {
 
   return (
     <>
-      <Link to={backLink}>
-        <Button>
-          <AiOutlineArrowLeft />
-          Go back
-        </Button>
-      </Link>
-
       <Section>
-        <img
-          src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
-          alt={data.title}
-        />
-        <Wrapper>
-          <h2>{data.title}</h2>
-          <p>User Score: {data.vote_average.toFixed(1) * 10}%</p>
-          <h3>Overview</h3>
-          <p>{data.overview}</p>
-          <h3>Genres</h3>
-          <p>{data.genres.map(genr => genr.name).join(' ')}</p>
-        </Wrapper>
+        <Link to={backLink}>
+          <Button>
+            <AiOutlineArrowLeft />
+            Go back
+          </Button>
+        </Link>
+        <Container>
+          <img
+            src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+            alt={data.title}
+          />
+          <Wrapper>
+            <h2>{data.title}</h2>
+            <Text>User Score: {data.vote_average.toFixed(1) * 10}%</Text>
+            <h3>Overview</h3>
+            <Text>{data.overview}</Text>
+            <h3>Genres</h3>
+            <Text>{data.genres.map(genr => genr.name).join(' ')}</Text>
+          </Wrapper>
+          <hr />
+        </Container>
+
+        <ListBlok>
+          {/* <p>Additional information</p> */}
+          <ListHad>
+            <Link to={`/movies/${id}/cast`}>Cast</Link>
+          </ListHad>
+          <ListHad>
+            <Link to={`/movies/${id}/reviews`}>Reviews</Link>
+          </ListHad>
+        </ListBlok>
+        <hr />
       </Section>
-      <hr />
-      <ul>
-        <p>Additional information</p>
-        <ListInfo>
-          <Link to={`/movies/${id}/cast`}>Cast</Link>
-        </ListInfo>
-        <ListInfo>
-          <Link to={`/movies/${id}/reviews`}>Reviews</Link>
-        </ListInfo>
-      </ul>
-      <hr />
       <Outlet />
       <GlobalStyle />
     </>

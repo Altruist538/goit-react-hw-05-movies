@@ -4,7 +4,8 @@ import { SearchForm } from 'components/SearchForm/SearchForm';
 import { fetchSearch } from 'components/api';
 import toast from 'react-hot-toast';
 import { MoveList } from 'components/MoveList/MoveList';
-import { Topic } from 'components/GlobalStyle';
+import { Section } from 'components/GlobalStyle';
+// import { Topic } from 'components/GlobalStyle';
 const Movies = () => {
   const [data, setData] = useState([]);
   // const location = useLocation();
@@ -20,13 +21,12 @@ const Movies = () => {
     }
   };
   return (
-    <>
-      <Topic>Search movies</Topic>
+    <Section>
+      {/* <Topic>Search movies</Topic> */}
       <SearchForm onAdd={addQuiz} />
       <hr />
       {data && <MoveList data={data} />}
-      <hr />
-    </>
+    </Section>
   );
 };
 export default Movies;
