@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import imgDat from '../imgDat/actor.png';
 import { ListBlok, ListHad, ListText } from './Cast.styled';
-export const Cast = () => {
+const Cast = () => {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
@@ -43,3 +43,4 @@ export const Cast = () => {
     </>
   );
 };
+export default Cast;

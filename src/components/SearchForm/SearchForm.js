@@ -1,15 +1,15 @@
 import { Formik } from 'formik';
-// import * as Yup from 'yup';
-// import { nanoid } from 'nanoid';
+import * as Yup from 'yup';
+
 import {
   StyledForm,
   StyledField,
   StyledError,
   Button,
 } from './SearchForm.styled';
-// const validationSchema = Yup.object().shape({
-//   movies: Yup.string().min(2).max(50).required('* Movies is required'),
-// });
+const validationSchema = Yup.object().shape({
+  movies: Yup.string().min(2).max(50).required('* Movie title required'),
+});
 export const SearchForm = ({ onAdd }) => {
   return (
     <>
@@ -17,7 +17,7 @@ export const SearchForm = ({ onAdd }) => {
         initialValues={{
           movies: '',
         }}
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
         onSubmit={(values, actions) => {
           onAdd(values);
           actions.resetForm();
@@ -25,7 +25,7 @@ export const SearchForm = ({ onAdd }) => {
       >
         <StyledForm>
           <label>
-            <StyledField type="text" name="movies" placeholder="Movies" />
+            <StyledField type="text" name="movies" placeholder="Movie title" />
             <StyledError name="movies" component="div" />
           </label>
 

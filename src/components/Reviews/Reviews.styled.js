@@ -2,8 +2,7 @@ import { styled } from 'styled-components';
 
 export const ListBlok = styled.ul`
   width: 1200px;
-  margin: auto;
-  margin-top: 20px;
+  margin: 20px auto;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

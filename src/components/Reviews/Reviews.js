@@ -30,8 +30,8 @@ export const Reviews = () => {
           <ListText>We don't have any reviews for this movie.</ListText>
         )}
       </ListBlok>
-
       <hr />
     </>
   );
 };
+export default Reviews;

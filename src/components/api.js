@@ -1,35 +1,32 @@
 import axios from 'axios';
 
 axios.defaults.baseURL = 'https://api.themoviedb.org/3';
-const MY_KEY = '2349e9a370ac695fd16495b98bcf317d';
+axios.defaults.headers.common['Authorization'] =
+  'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMzQ5ZTlhMzcwYWM2OTVmZDE2NDk1Yjk4YmNmMzE3ZCIsInN1YiI6IjY0ZjBlYjJlNzdkMjNiMDE1MDM5MWM1NSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.0NVANqreTUD07Xhygz0ja3H_7YAhHFACxA_SKBKM33Q';
 
 export const fetchTrending = async () => {
-  const response = await axios.get(`/trending/movie/day?api_key=${MY_KEY}`);
+  const response = await axios.get(`/trending/movie/day`);
   return response.data;
 };
+
 export const fetchDetails = async id => {
-  const response = await axios.get(`movie/${id}?api_key=${MY_KEY}`);
-  console.log(id);
-
+  const response = await axios.get(`movie/${id}`);
   return response.data;
 };
+
 export const fetchSearch = async search => {
-  console.log(search);
   const response = await axios.get(
-    `/search/movie?query=${search}&include_adult=false&language=en-US&page=1&api_key=${MY_KEY}`
+    `/search/movie?query=${search}&include_adult=false&language=en-US&page=1`
   );
+  return response.data;
+};
 
-  return response.data;
-};
 export const fetchCredits = async id => {
-  const response = await axios.get(`/movie/${id}/credits?api_key=${MY_KEY}`);
+  const response = await axios.get(`/movie/${id}/credits`);
   return response.data;
 };
+
 export const fetchReviews = async id => {
-  console.log(id);
-  const response = await axios.get(
-    `/movie/${id}/reviews?api_key=${MY_KEY}&include_adult=false&language=en-US&page=1`
-  );
-  console.log(response.data);
+  const response = await axios.get(`/movie/${id}/reviews`);
   return response.data;
 };

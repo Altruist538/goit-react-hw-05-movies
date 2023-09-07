@@ -34,7 +34,7 @@ export const Section = styled.div`
   background-color: #ebdfcf52;
   width: 1200px;
   margin: auto;
-  // margin-top: 10px;
+  padding-bottom: 20px;
 `;
 export const Container = styled.div`
   margin-top: 10px;
@@ -42,7 +42,7 @@ export const Container = styled.div`
 `;
 export const ListBlok = styled.ul`
   display: flex;
-  padding-top: 10px;
+  margin-top: 10px;
 `;
 export const ListHad = styled.li`
   font-size: 20px;
@@ -91,7 +91,6 @@ export const Text = styled.p`
 `;
 export const Header = styled.nav`
   width: 1200px;
-
   margin: auto;
   font-weight: bold;
 `;
