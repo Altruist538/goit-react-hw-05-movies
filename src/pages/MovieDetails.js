@@ -10,6 +10,7 @@ import {
   Container,
   ListBlok,
   Text,
+  NavLinkData,
 } from 'components/GlobalStyle';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { Loader } from 'components/Loader/Loader';
@@ -65,10 +66,10 @@ const MovieDetails = () => {
 
       <ListBlok>
         <ListHad>
-          <Link to={`/movies/${id}/cast`}>Cast</Link>
+          <NavLinkData to={`/movies/${id}/cast`}>Cast</NavLinkData>
         </ListHad>
         <ListHad>
-          <Link to={`/movies/${id}/reviews`}>Reviews</Link>
+          <NavLinkData to={`/movies/${id}/reviews`}>Reviews</NavLinkData>
         </ListHad>
       </ListBlok>
       <hr />

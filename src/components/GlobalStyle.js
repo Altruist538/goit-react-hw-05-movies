@@ -1,4 +1,5 @@
 import { createGlobalStyle, styled } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 import 'modern-normalize';
 
 export const GlobalStyle = createGlobalStyle`
@@ -93,4 +94,12 @@ export const Header = styled.nav`
   width: 1200px;
   margin: auto;
   font-weight: bold;
+`;
+export const NavLinkData = styled(NavLink)`
+  &.active {
+    color: red;
+  }
+  &:hover {
+    color: orange;
+  }
 `;

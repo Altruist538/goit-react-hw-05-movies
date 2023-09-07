@@ -1,4 +1,5 @@
 import { styled } from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 export const ListBlok = styled.ul`
   display: flex;
@@ -9,4 +10,12 @@ export const ListHad = styled.li`
   margin-left: 10px;
   display: flex;
   gap: 10px;
+`;
+export const NavLinkNavigation = styled(NavLink)`
+  &.active {
+    color: red;
+  }
+  &:hover {
+    color: orange;
+  }
 `;

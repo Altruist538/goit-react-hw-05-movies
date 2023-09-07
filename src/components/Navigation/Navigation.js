@@ -1,14 +1,13 @@
-import { Link } from 'react-router-dom';
-import { ListHad, ListBlok } from './Navigation.styled';
+import { ListHad, ListBlok, NavLinkNavigation } from './Navigation.styled';
 export const Navigation = () => {
   return (
     <>
       <ListBlok>
         <ListHad>
-          <Link to="/">Home</Link>
+          <NavLinkNavigation to="/">Home</NavLinkNavigation>
         </ListHad>
         <ListHad>
-          <Link to="/movies">Movies</Link>
+          <NavLinkNavigation to="/movies">Movies</NavLinkNavigation>
         </ListHad>
       </ListBlok>
     </>
