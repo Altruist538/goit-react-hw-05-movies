@@ -33,7 +33,7 @@ const Cast = () => {
               alt={dat.name}
               width="200px"
               height="300px"
-              style={{ objectFit: 'cover' }}
+              style={{ objectFit: 'contain ' }}
             />
             <ListText>{dat.name}</ListText>
           </ListHad>
