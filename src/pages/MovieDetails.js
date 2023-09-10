@@ -66,10 +66,10 @@ const MovieDetails = () => {
 
       <ListBlok>
         <ListHad>
-          <NavLinkData to={`/movies/${id}/cast`}>Cast</NavLinkData>
+          <NavLinkData to={`cast`}>Cast</NavLinkData>
         </ListHad>
         <ListHad>
-          <NavLinkData to={`/movies/${id}/reviews`}>Reviews</NavLinkData>
+          <NavLinkData to={`reviews`}>Reviews</NavLinkData>
         </ListHad>
       </ListBlok>
       <hr />
