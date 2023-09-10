@@ -1,7 +1,7 @@
 import { useEffect, useState, Suspense } from 'react';
 import { fetchDetails } from 'components/api';
 import { useParams, Link, useLocation, Outlet } from 'react-router-dom';
-
+import imgData from '../components/imgDat/no_image.png';
 import {
   GlobalStyle,
   Wrapper,
@@ -50,8 +50,15 @@ const MovieDetails = () => {
       </Link>
       <Container>
         <img
-          src={`https://image.tmdb.org/t/p/w300/${data.poster_path}`}
+          src={
+            data.poster_path !== null
+              ? `https://image.tmdb.org/t/p/w300/${data.poster_path}`
+              : imgData
+          }
           alt={data.title}
+          width="200px"
+          height="300px"
+          style={{ objectFit: 'contain ' }}
         />
         <Wrapper>
           <h2>{data.title}</h2>
