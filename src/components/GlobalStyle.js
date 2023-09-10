@@ -76,6 +76,7 @@ export const Button = styled.div`
   align-items: center;
   gap: 8px;
   margin-bottom: 5px;
+  margin-left: 10px;
 `;
 export const Topic = styled.h2`
   display: flex;
